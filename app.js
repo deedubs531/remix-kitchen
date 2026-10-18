@@ -1,18 +1,22 @@
+// Shop items: x = what the item contains (meat, fish, dairy, egg, gluten, nuts, honey),
+// sw = what to buy instead when that's off the menu ("" = just leave it out),
+// core = the kit is built around it, so there's no swap
 const KITS = [
 { id:"stew", name:"Coconut Chickpea Stew", tag:"Your favourite",
-  why:"Built on Alison Roman's spiced chickpea stew, already dairy-free thanks to coconut milk. One pot, better every day.",
-  sources:[{title:"Spiced Chickpea Stew With Coconut and Turmeric", by:"Alison Roman · NYT Cooking", url:"https://cooking.nytimes.com/search?q=alison+roman+spiced+chickpea+stew", note:"Make a full pot on Sunday. Swap her yogurt topping for coconut yogurt."}],
+  why:"Built on Alison Roman's spiced chickpea stew, rich with coconut milk. One pot, better every day.",
+  sources:[{title:"Spiced Chickpea Stew With Coconut and Turmeric", by:"Alison Roman · NYT Cooking", url:"https://cooking.nytimes.com/search?q=alison+roman+spiced+chickpea+stew", note:"Make a full pot on Sunday. Top each bowl with a spoon of yogurt."}],
   prep:["Make the full pot of stew (about 1 hr)","Toast pita, cool, store in a bag","Cook a pot of rice","Boil 4 eggs to jammy (6½ min), peel","Wash mint and spinach, wrap in paper towel"],
-  meals:[{n:"The classic", h:"Reheat stew, top with coconut yogurt, mint and a crushed toasted pita."},
+  meals:[{n:"The classic", h:"Reheat stew, top with yogurt, mint and a crushed toasted pita."},
          {n:"Stew rice bowl", h:"Stew over rice with a halved jammy egg and chilli flakes."},
          {n:"Hummus swoosh", h:"Spread hummus on a plate, spoon thick stew on top, scatter olives and lemon."},
-         {n:"Green stew", h:"Wilt two handfuls of spinach into the stew, finish with dairy-free feta and lemon."},
+         {n:"Green stew", h:"Wilt two handfuls of spinach into the stew, finish with feta and lemon."},
          {n:"Curry-style bowl", h:"Stew over rice with chilli crisp, lime and extra coconut milk stirred in."}],
-  shop:[{i:"2 cans chickpeas"},{i:"2 cans full-fat coconut milk"},{i:"Onion, garlic, ginger"},{i:"Ground turmeric, red pepper flakes"},{i:"Vegetable broth"},{i:"Bunch of greens (chard or kale) + bag of spinach"},{i:"Mint, lemons, limes"},{i:"Pita"},{i:"Coconut yogurt"},{i:"Hummus",f:"check label"},{i:"Dairy-free feta"},{i:"Eggs, rice, olives, chilli crisp"}]},
+  shop:[{i:"2 cans chickpeas"},{i:"2 cans full-fat coconut milk"},{i:"Onion, garlic, ginger"},{i:"Ground turmeric, red pepper flakes"},{i:"Vegetable broth"},{i:"Bunch of greens (chard or kale) + bag of spinach"},{i:"Mint, lemons, limes"},
+        {i:"Pita",x:"gluten",sw:"Gluten-free flatbread or crackers"},{i:"Plain yogurt",x:"dairy",sw:"Coconut yogurt"},{i:"Hummus"},{i:"Feta",x:"dairy",sw:"Dairy-free feta"},{i:"Eggs",x:"egg",sw:""},{i:"Rice, olives, chilli crisp"}]},
 
 { id:"goddess", name:"Green Goddess Grain Bowls", tag:"New · 4.8★ sauce",
   why:"A tray of roasted baby bellas and globe eggplant, a pot of farro, your market tofu and a jar of herby tahini green goddess. Mix and match all week.",
-  sources:[{title:"Vegan Green Goddess Dressing", by:"Suzy Karadsheh · The Mediterranean Dish", rating:"4.8★ from 39 votes", url:"https://www.themediterraneandish.com/vegan-green-goddess-dressing/", note:"Tahini, lemon and a big pile of herbs instead of sour cream or mayo. Keeps 5 days in a jar."},
+  sources:[{title:"Vegan Green Goddess Dressing", by:"Suzy Karadsheh · The Mediterranean Dish", rating:"4.8★ from 39 votes", url:"https://www.themediterraneandish.com/vegan-green-goddess-dressing/", note:"Tahini, lemon and a big pile of herbs. Keeps 5 days in a jar."},
            {title:"Pressed tofu, plain or spiced", by:"The Woks of Life", url:"https://thewoksoflife.com/pressed-tofu-plain-or-spiced", note:"Background on the marinated pressed tofu you buy at Asian markets. It's ready to eat, so just slice it."}],
   prep:["Blend the green goddess (parsley, cilantro or basil, dill, scallion, garlic, tahini, lemon)","Roast 1 lb halved baby bellas and 1 cubed globe eggplant at 425°F, 25–30 min, with olive oil, salt, cumin","Cook 1½ cups farro (about 25 min), salt it well","Massage chopped kale with lemon and a pinch of salt","Slice the marinated tofu; quick-pickle a red onion"],
   meals:[{n:"The goddess bowl", h:"Farro, kale, roasted mushrooms and eggplant, tofu, a big spoon of green goddess."},
@@ -20,10 +24,11 @@ const KITS = [
          {n:"Goddess wrap", h:"Pita or lavash with hummus, eggplant, tofu, kale and pickled onion."},
          {n:"Eggplant toast", h:"Mash roasted eggplant on toast, add sliced tofu, goddess and chilli flakes."},
          {n:"Big kale salad", h:"Kale, chickpeas, mushrooms, toasted seeds, goddess thinned with lemon."}],
-  shop:[{i:"1 lb baby bella mushrooms"},{i:"1 globe eggplant"},{i:"Marinated pressed tofu (Asian market)"},{i:"Farro"},{i:"Bunch of kale + bag of spinach"},{i:"Parsley, cilantro or basil, dill, scallions"},{i:"Tahini, 3 lemons, garlic, red onion"},{i:"1 can chickpeas, pita or lavash, eggs, bread"},{i:"Hummus",f:"check label"},{i:"Pumpkin or sunflower seeds"}]},
+  shop:[{i:"1 lb baby bella mushrooms"},{i:"1 globe eggplant"},{i:"Marinated pressed tofu (Asian market)"},{i:"Farro",x:"gluten",sw:"Quinoa"},{i:"Bunch of kale + bag of spinach"},{i:"Parsley, cilantro or basil, dill, scallions"},{i:"Tahini, 3 lemons, garlic, red onion"},{i:"1 can chickpeas"},
+        {i:"Pita or lavash",x:"gluten",sw:"Gluten-free wraps"},{i:"Bread",x:"gluten",sw:"Gluten-free bread"},{i:"Eggs",x:"egg",sw:""},{i:"Hummus"},{i:"Pumpkin or sunflower seeds"}]},
 
 { id:"garlic", name:"Garlic Eggplant & Spiced Tofu", tag:"New · 4.97★",
-  why:"Japanese eggplant in glossy garlic sauce plus a 15-minute stir-fry of the marinated pressed tofu you already buy. Both from The Woks of Life, both dairy-free.",
+  why:"Japanese eggplant in glossy garlic sauce plus a 15-minute stir-fry of the marinated pressed tofu you already buy. Both from The Woks of Life.",
   sources:[{title:"Chinese Eggplant with Garlic Sauce", by:"The Woks of Life", rating:"4.97★ from 114 votes", url:"https://thewoksoflife.com/chinese-eggplant-garlic-sauce/", note:"Use vegetarian oyster sauce and skip the pork, or swap in finely chopped shiitake. Keeps 4 days."},
            {title:"Stir-Fried Pressed Tofu with Peppers and Black Beans", by:"The Woks of Life", url:"https://thewoksoflife.com/stir-fried-pressed-tofu-peppers-black-beans/", note:"15 minutes with store-bought spiced tofu, fermented black beans and long hot peppers."}],
   prep:["Mix the garlic sauce ahead (it speeds up the cook)","Cook the eggplant in garlic sauce, adding chopped shiitake if you like (about 40 min)","Stir-fry the pressed tofu with peppers and black beans (15 min)","Cook a big pot of jasmine rice","Wash spinach or bok choy for wilting"],
@@ -32,20 +37,23 @@ const KITS = [
          {n:"Garlic noodles", h:"Toss noodles with eggplant and its sauce, wilt in bok choy, add chilli oil."},
          {n:"Tofu fried rice", h:"Day-old rice, an egg, chopped tofu and greens in a hot pan."},
          {n:"Lettuce cups", h:"Chop eggplant and tofu together, spoon into lettuce leaves with rice."}],
-  shop:[{i:"1 lb Japanese eggplant"},{i:"8 oz marinated pressed tofu"},{i:"6–8 fresh shiitake (optional)"},{i:"Long hot peppers, garlic, ginger, scallions, dried chillies"},{i:"Vegetarian oyster sauce, light & dark soy, rice vinegar, Shaoxing wine"},{i:"Fermented black beans, cornstarch, sesame oil"},{i:"Spinach or bok choy, butter lettuce"},{i:"Jasmine rice, noodles, eggs, chilli oil"}],
+  shop:[{i:"1 lb Japanese eggplant"},{i:"8 oz marinated pressed tofu"},{i:"6–8 fresh shiitake (optional)"},{i:"Long hot peppers, garlic, ginger, scallions, dried chillies"},
+        {i:"Vegetarian oyster sauce",x:"gluten",sw:"Gluten-free vegetarian oyster sauce"},{i:"Light & dark soy sauce",x:"gluten",sw:"Tamari"},{i:"Rice vinegar"},{i:"Shaoxing wine",x:"gluten",sw:"Dry sherry"},
+        {i:"Fermented black beans, cornstarch, sesame oil"},{i:"Spinach or bok choy, butter lettuce"},{i:"Jasmine rice, chilli oil"},{i:"Noodles",x:"gluten",sw:"Rice noodles"},{i:"Eggs",x:"egg",sw:""}],
   tip:"Cut eggplant just before cooking; it browns quickly once sliced."},
 
 { id:"bulgogi", name:"King Oyster Bulgogi", tag:"New · mushroom-forward",
   why:"Shredded king oyster mushrooms in a sweet, gingery bulgogi marinade with Asian pear. Chewy and meaty, and great in bowls, wraps and bibimbap.",
   sources:[{title:"Sweet and Spicy Korean Bulgogi Mushrooms", by:"Jeeca Uy · VegNews, from Vegan Asian", url:"https://vegnews.com/vegan-recipes/vegan-korean-bulgogi-mushrooms", note:"1 lb king oysters, shredded. About 10 minutes on the stove once marinated."},
-           {title:"5-Minute Sautéed King Oyster Mushrooms", by:"A Couple Cooks", url:"https://www.acouplecooks.com/king-oyster-mushrooms/", note:"Sesame oil, garlic, tamari and mirin, no butter. A quick extra batch for mid-week."}],
+           {title:"5-Minute Sautéed King Oyster Mushrooms", by:"A Couple Cooks", url:"https://www.acouplecooks.com/king-oyster-mushrooms/", note:"Sesame oil, garlic, tamari and mirin. A quick extra batch for mid-week."}],
   prep:["Shred 1 lb king oysters with a fork and marinate (soy, brown sugar, gochujang, sesame oil, garlic, ginger, grated Asian pear)","Cook the bulgogi mushrooms with onion until glossy (10 min)","Make spinach namul: blanch spinach, squeeze, toss with sesame oil, garlic, salt","Cook a pot of short-grain rice","Slice scallions and cucumber"],
   meals:[{n:"Bulgogi bowl", h:"Rice, mushrooms, kimchi, cucumber, scallions, sesame."},
          {n:"Lettuce wraps", h:"Lettuce leaves, a spoon of rice, mushrooms, gochujang, kimchi."},
          {n:"Bibimbap", h:"Rice, mushrooms, spinach namul, a fried egg and gochujang. Stir it all up."},
          {n:"Bulgogi noodles", h:"Noodles tossed with mushrooms, sesame oil and wilted greens."},
          {n:"Kimchi fried rice", h:"Cold rice, chopped kimchi and mushrooms in a hot pan, egg on top."}],
-  shop:[{i:"1 lb king oyster mushrooms"},{i:"Asian pear, onion, garlic, ginger, scallions"},{i:"Soy sauce, brown sugar, gochujang, toasted sesame oil, mirin"},{i:"Big bag of spinach, butter lettuce, cucumber"},{i:"Kimchi",f:"dairy-free; often has fish sauce"},{i:"Short-grain rice, noodles, eggs, sesame seeds"}]},
+  shop:[{i:"1 lb king oyster mushrooms"},{i:"Asian pear, onion, garlic, ginger, scallions"},{i:"Soy sauce",x:"gluten",sw:"Tamari"},{i:"Gochujang",x:"gluten",sw:"Gluten-free gochujang"},{i:"Brown sugar, toasted sesame oil, mirin"},
+        {i:"Big bag of spinach, butter lettuce, cucumber"},{i:"Kimchi",x:"fish",sw:"Vegan kimchi (no fish sauce)"},{i:"Short-grain rice, sesame seeds"},{i:"Noodles",x:"gluten",sw:"Sweet potato glass noodles"},{i:"Eggs",x:"egg",sw:""}]},
 
 { id:"miso", name:"Miso Eggplant & Mushroom Rice", tag:"New · Japanese",
   why:"Nasu dengaku (miso-glazed eggplant) with a one-pot shiitake rice. Like your sushi orders, but cosy and vegetable-led, with your tofu for protein.",
@@ -57,7 +65,8 @@ const KITS = [
          {n:"Miso eggplant don", h:"Chopped dengaku eggplant over rice with a jammy egg and scallions."},
          {n:"Miso-glazed tofu", h:"Spread leftover miso sauce on tofu slices, broil 3 min, serve with rice and greens."},
          {n:"Crispy rice pan", h:"Fry mushroom rice in a hot pan until crisp, wilt in spinach, top with an egg."}],
-  shop:[{i:"2 Japanese eggplants (or 1 globe)"},{i:"Dried shiitake + fresh shiitake + baby bellas"},{i:"Marinated pressed tofu"},{i:"Miso, sake, mirin, sugar, soy sauce"},{i:"Short-grain rice, dashi (or kombu)"},{i:"Spinach, scallions, sesame seeds"},{i:"Eggs, carrot"}],
+  shop:[{i:"2 Japanese eggplants (or 1 globe)"},{i:"Dried shiitake + fresh shiitake + baby bellas"},{i:"Marinated pressed tofu"},{i:"Miso, sake, mirin, sugar"},{i:"Soy sauce",x:"gluten",sw:"Tamari"},
+        {i:"Short-grain rice"},{i:"Dashi",x:"fish",sw:"Kombu (for a plant-based dashi)"},{i:"Spinach, scallions, sesame seeds"},{i:"Carrot"},{i:"Eggs",x:"egg",sw:""}],
   tip:"Eat the eggplant within 3 days; the frozen rice portions last a month."},
 
 { id:"poached", name:"Ginger Scallion Chicken", tag:"Gentle",
@@ -70,7 +79,8 @@ const KITS = [
          {n:"Quick jook", h:"Simmer leftover rice in broth for 10 minutes until soft, top with chicken and scallion."},
          {n:"Scallion oil noodles", h:"Toss thin noodles with ginger-scallion oil and soy, top with chicken and cucumber."},
          {n:"Egg drop soup", h:"Bring broth to a simmer, drizzle in a beaten egg, add chicken and spinach."}],
-  shop:[{i:"6 chicken thighs (bone-in or boneless, skin-on)"},{i:"Big knob of ginger, 2 bunches scallions, garlic"},{i:"Jasmine rice"},{i:"Low-sodium chicken broth (for the rice)"},{i:"Light soy sauce, neutral oil, sugar"},{i:"Baby bok choy, spinach, cucumbers"},{i:"Thin wheat noodles, eggs"}],
+  shop:[{i:"6 chicken thighs (bone-in or boneless, skin-on)",x:"meat",core:1},{i:"Big knob of ginger, 2 bunches scallions, garlic"},{i:"Jasmine rice"},{i:"Low-sodium chicken broth (for the rice)",x:"meat",core:1},
+        {i:"Light soy sauce",x:"gluten",sw:"Tamari"},{i:"Neutral oil, sugar"},{i:"Baby bok choy, spinach, cucumbers"},{i:"Thin wheat noodles",x:"gluten",sw:"Thin rice noodles"},{i:"Eggs",x:"egg",sw:""}],
   tip:"The poaching broth keeps 4 days in the fridge. Freeze half if you won't use it in time."},
 
 { id:"noodlesoup", name:"Chinese Chicken Noodle Soup", tag:"Gentle",
@@ -83,7 +93,8 @@ const KITS = [
          {n:"Dumpling soup", h:"Cook frozen chicken or veg dumplings in the broth, add greens and scallion."},
          {n:"Ginger chicken jook", h:"Simmer rice in broth until creamy, top with chicken, a drop of sesame oil and scallion."},
          {n:"Egg ribbon noodles", h:"Noodle soup with a beaten egg swirled into the simmering broth."}],
-  shop:[{i:"6 bone-in chicken thighs"},{i:"Big knob of ginger, scallions, 1 carrot"},{i:"Shaoxing wine (or dry sherry), salt, white pepper"},{i:"Thin wheat noodles (or angel hair)"},{i:"Baby bok choy, spinach"},{i:"Rice, eggs, sesame oil"},{i:"Frozen dumplings",f:"check label"}],
+  shop:[{i:"6 bone-in chicken thighs",x:"meat",core:1},{i:"Big knob of ginger, scallions, 1 carrot"},{i:"Shaoxing wine",x:"gluten",sw:"Dry sherry"},{i:"Salt, white pepper"},
+        {i:"Thin wheat noodles (or angel hair)",x:"gluten",sw:"Thin rice noodles"},{i:"Baby bok choy, spinach"},{i:"Rice, sesame oil"},{i:"Eggs",x:"egg",sw:""},{i:"Frozen dumplings",x:"gluten",sw:""}],
   tip:"Store noodles and broth separately so the noodles don't go soggy."},
 
 { id:"steamed", name:"Steamed Chicken & Shiitake", tag:"Gentle",
@@ -95,10 +106,11 @@ const KITS = [
          {n:"Mushroom chicken jook", h:"Simmer rice with water and the shiitake soaking liquid, top with chicken."},
          {n:"Gentle noodle bowl", h:"Thin noodles in light broth with chicken, mushrooms and spinach."},
          {n:"Steamed egg & chicken", h:"Steam a beaten egg with warm water for 10 minutes, top with chicken and scallion."}],
-  shop:[{i:"1½ lb boneless chicken thighs"},{i:"Dried shiitake mushrooms"},{i:"Ginger, scallions"},{i:"Light soy sauce, oyster sauce (or vegetarian), cornstarch, Shaoxing wine"},{i:"Bok choy or gai lan, spinach"},{i:"Rice, thin noodles, eggs"},{i:"Chicken broth"}]},
+  shop:[{i:"1½ lb boneless chicken thighs",x:"meat",core:1},{i:"Dried shiitake mushrooms"},{i:"Ginger, scallions"},{i:"Light soy sauce",x:"gluten",sw:"Tamari"},{i:"Oyster sauce",x:["gluten","fish"],sw:"Gluten-free vegetarian oyster sauce"},
+        {i:"Cornstarch"},{i:"Shaoxing wine",x:"gluten",sw:"Dry sherry"},{i:"Bok choy or gai lan, spinach"},{i:"Rice"},{i:"Thin noodles",x:"gluten",sw:"Thin rice noodles"},{i:"Eggs",x:"egg",sw:""},{i:"Chicken broth",x:"meat",core:1}]},
 
 { id:"curry", name:"Red Lentil Curry", tag:"4.97★ · 2,800+ ratings",
-  why:"You saved Nisha Vora's not-chicken and Lidey Heuck's red curry lentils. This is Nisha's most-rated recipe, and it's naturally dairy-free.",
+  why:"You saved Nisha Vora's not-chicken and Lidey Heuck's red curry lentils. This is Nisha's most-rated recipe, creamy from coconut milk.",
   sources:[{title:"Red Lentil Curry", by:"Nisha Vora · Rainbow Plant Life", rating:"4.97★ from about 2,800 votes", url:"https://rainbowplantlife.com/red-lentil-curry/", note:"Creamy from coconut milk and almond butter. Make a double batch."}],
   prep:["Make a double batch of lentil curry (about 45 min)","Roast 2 cubed sweet potatoes at 425°F for 30 min","Cook a big pot of basmati rice","Quick-pickle a red onion in lime juice and salt","Boil 3 eggs to jammy"],
   meals:[{n:"Curry & rice", h:"The classic: curry over basmati with pickled onion and cilantro."},
@@ -106,35 +118,38 @@ const KITS = [
          {n:"Dal and toasty pita", h:"Thick curry as a dip with warm pita and a squeeze of lime."},
          {n:"Lentil soup", h:"Thin the curry with broth, add a can of chickpeas, simmer 5 min."},
          {n:"Egg & chilli crisp", h:"Curry rice bowl with a jammy egg and a spoon of chilli crisp."}],
-  shop:[{i:"2 cups red lentils"},{i:"2 cans full-fat coconut milk"},{i:"Almond butter"},{i:"Garlic, ginger, 2 serranos"},{i:"Cumin, coriander, curry powder, garam masala"},{i:"Vegetable broth, 1 can chickpeas"},{i:"2 sweet potatoes, red onion, spinach"},{i:"Cilantro, limes, lemons"},{i:"Basmati rice, pita"},{i:"Naan",f:"often has milk; pita is safer"},{i:"Eggs, chilli crisp"}]},
+  shop:[{i:"2 cups red lentils"},{i:"2 cans full-fat coconut milk"},{i:"Almond butter",x:"nuts",sw:"Sunflower seed butter"},{i:"Garlic, ginger, 2 serranos"},{i:"Cumin, coriander, curry powder, garam masala"},{i:"Vegetable broth, 1 can chickpeas"},
+        {i:"2 sweet potatoes, red onion, spinach"},{i:"Cilantro, limes, lemons"},{i:"Basmati rice"},{i:"Pita",x:"gluten",sw:"Gluten-free flatbread"},{i:"Eggs",x:"egg",sw:""},{i:"Chilli crisp"}]},
 
 { id:"shawarma", name:"Chicken Shawarma", tag:"Reader favourite",
-  why:"Matches your saved turmeric chicken kebabs, Jerusalem hummus and Taverna salad. The marinade is spices and oil, so it's dairy-free; tahini replaces the yogurt sauce.",
+  why:"Matches your saved turmeric chicken kebabs, Jerusalem hummus and Taverna salad. A spice-and-oil marinade with a lemony tahini sauce.",
   sources:[{title:"Chicken Shawarma (Middle Eastern)", by:"Nagi · RecipeTin Eats", url:"https://www.recipetineats.com/chicken-sharwama-middle-eastern/", note:"One of the site's most-requested recipes, with 40+ pages of reader comments. Use thighs."},
            {title:"Sheet Pan Chicken Shawarma with Sesame Sweet Potatoes and Hummus", by:"Tieghan Gerard · Half Baked Harvest", url:"https://www.halfbakedharvest.com/sheet-pan-chicken-shawarma/", note:"Borrow the sesame sweet potatoes for a second component."}],
   prep:["Marinate 2 lb chicken thighs overnight Saturday","Roast chicken and sliced onion on one tray, sweet potato on another (25 min)","Chop and slice the chicken, store with pan juices","Mix tahini sauce: tahini, lemon, garlic, water","Chop cucumber, tomato, parsley; keep undressed"],
   meals:[{n:"Pita wrap", h:"Warm pita, chicken, cucumber-tomato, tahini, pickled onion."},
          {n:"Hummus plate", h:"Hummus swoosh, chicken on top, sweet potato, olives, pita on the side."},
          {n:"Rice bowl", h:"Rice, chicken, chopped salad, tahini and chilli flakes."},
-         {n:"Taverna-style salad", h:"Chopped salad, chickpeas, olives, dairy-free feta, warm chicken."},
+         {n:"Taverna-style salad", h:"Chopped salad, chickpeas, olives, feta, warm chicken."},
          {n:"Crispy chickpea greens", h:"Greens, chicken, pan-crisped chickpeas, lemon and tahini."}],
-  shop:[{i:"2 lb boneless chicken thighs"},{i:"Cumin, coriander, cardamom, paprika, turmeric, cinnamon"},{i:"Tahini, lemons, garlic"},{i:"2 sweet potatoes, red onion"},{i:"Cucumbers, tomatoes, parsley, salad greens"},{i:"Pita, rice, 1 can chickpeas, olives"},{i:"Hummus",f:"check label"},{i:"Dairy-free feta"}]},
+  shop:[{i:"2 lb boneless chicken thighs",x:"meat",core:1},{i:"Cumin, coriander, cardamom, paprika, turmeric, cinnamon"},{i:"Tahini, lemons, garlic"},{i:"2 sweet potatoes, red onion"},{i:"Cucumbers, tomatoes, parsley, salad greens"},
+        {i:"Pita",x:"gluten",sw:"Gluten-free wraps"},{i:"Rice, 1 can chickpeas, olives"},{i:"Hummus"},{i:"Feta",x:"dairy",sw:"Dairy-free feta"}]},
 
 { id:"salmon", name:"Teriyaki Salmon Bowls", tag:"Sushi night at home",
   why:"You saved Andy Baraghani's sticky miso salmon bowl and miso-glazed fish. This turns one tray of salmon into a week of sushi-shop dinners.",
-  sources:[{title:"Teriyaki Salmon", by:"Nami · Just One Cookbook", url:"https://www.justonecookbook.com/teriyaki-salmon-recipe/", note:"Authentic home-style method. Use oil instead of butter. Nami suggests leftovers for bento, onigirazu and rice bowls."},
+  sources:[{title:"Teriyaki Salmon", by:"Nami · Just One Cookbook", url:"https://www.justonecookbook.com/teriyaki-salmon-recipe/", note:"Authentic home-style method. Nami suggests leftovers for bento, onigirazu and rice bowls."},
            {title:"Teriyaki Salmon", by:"Jenn Segal · Once Upon a Chef", url:"https://www.onceuponachef.com/recipes/teriyaki-salmon.html", note:"20-minute alternative; readers call it the best salmon they've made."}],
-  prep:["Cook seasoned sushi rice (rice + rice vinegar, sugar, salt)","Roast or pan-sear 1.5 lb teriyaki salmon","Quick-pickle sliced cucumber in rice vinegar and salt","Shell edamame, shred carrot, slice scallions","Mix spicy mayo: mayo + sriracha (mayo is dairy-free)"],
+  prep:["Cook seasoned sushi rice (rice + rice vinegar, sugar, salt)","Roast or pan-sear 1.5 lb teriyaki salmon","Quick-pickle sliced cucumber in rice vinegar and salt","Shell edamame, shred carrot, slice scallions","Mix spicy mayo: mayo + sriracha"],
   meals:[{n:"Sushi bowl", h:"Rice, flaked salmon, pickled cucumber, avocado, spicy mayo, nori."},
          {n:"Hand rolls", h:"Nori squares, rice, salmon, cucumber, avocado. Roll and eat."},
          {n:"Cucumber-avocado salad", h:"Smashed cucumber and avocado with salmon, sesame and chilli."},
          {n:"Salmon fried rice", h:"Day-old rice in a hot pan with egg, edamame, salmon, scallions."},
          {n:"Onigirazu", h:"Rice sandwich: nori, rice, salmon, cucumber, folded and cut in half."}],
-  shop:[{i:"1.5 lb salmon fillets"},{i:"Soy sauce, mirin, sake (or dry sherry), sugar"},{i:"Sushi rice, rice vinegar"},{i:"Nori sheets"},{i:"Cucumbers, carrots, scallions, 2 avocados"},{i:"Frozen edamame, eggs"},{i:"Mayo, sriracha, sesame seeds"}],
+  shop:[{i:"1.5 lb salmon fillets",x:"fish",core:1},{i:"Soy sauce",x:"gluten",sw:"Tamari"},{i:"Mirin, sake (or dry sherry), sugar"},{i:"Sushi rice, rice vinegar"},{i:"Nori sheets"},{i:"Cucumbers, carrots, scallions, 2 avocados"},
+        {i:"Frozen edamame"},{i:"Eggs",x:"egg",sw:""},{i:"Mayo",x:"egg",sw:"Vegan mayo"},{i:"Sriracha, sesame seeds"}],
   tip:"Cooked salmon keeps about 3 days, so eat the salmon meals first and save fried rice for later in the week."},
 
 { id:"moroccan", name:"Moroccan Lentil Soup", tag:"4.88★ · cosy",
-  why:"You saved the red lentil pumpkin soup and Melissa Clark's honeynut squash and chickpeas. This spiced soup finishes with tahini, not dairy.",
+  why:"You saved the red lentil pumpkin soup and Melissa Clark's honeynut squash and chickpeas. This spiced soup finishes with a lemony tahini drizzle.",
   sources:[{title:"Moroccan Spiced Lentil & Chickpea Soup", by:"Niki Webster · Rebel Recipes", rating:"4.88★ from 32 votes", url:"https://www.rebelrecipes.com/moroccan-spiced-lentil-chickpea-soup/", note:"Vegan, about 45 minutes, with a lemony tahini dressing."},
            {title:"Moroccan Lentil and Vegetable Stew", by:"Beth Moncel · Budget Bytes", url:"https://www.budgetbytes.com/moroccan-lentil-vegetable-stew/", note:"Cheap, thicker alternative that readers call their favourite lentil soup."}],
   prep:["Make a double pot of soup (about 45 min)","Roast a cubed squash at 425°F for 30 min","Mix tahini dressing: tahini, lemon, water, salt","Roast a can of chickpeas until crispy","Cook couscous or rice"],
@@ -143,10 +158,11 @@ const KITS = [
          {n:"Squash bowl", h:"Soup over roasted squash with crispy chickpeas on top."},
          {n:"Harissa heat", h:"Stir extra harissa into the soup, top with crispy chickpeas and lemon."},
          {n:"Egg & pita", h:"Crack an egg into simmering soup, cover 4 minutes, scoop with pita."}],
-  shop:[{i:"Red split lentils, 2 cans chickpeas"},{i:"Onion, garlic, celery, carrots, tomatoes"},{i:"Cumin seeds, cinnamon, turmeric, smoked paprika"},{i:"Harissa paste, vegetable stock"},{i:"Tahini, lemons, cilantro"},{i:"1 squash (butternut or honeynut)"},{i:"Couscous, pita, eggs"}]},
+  shop:[{i:"Red split lentils, 2 cans chickpeas"},{i:"Onion, garlic, celery, carrots, tomatoes"},{i:"Cumin seeds, cinnamon, turmeric, smoked paprika"},{i:"Harissa paste, vegetable stock"},{i:"Tahini, lemons, cilantro"},{i:"1 squash (butternut or honeynut)"},
+        {i:"Couscous",x:"gluten",sw:"Quinoa or rice"},{i:"Pita",x:"gluten",sw:"Gluten-free flatbread"},{i:"Eggs",x:"egg",sw:""}]},
 
 { id:"gochujang", name:"Gochujang Chicken Bowls", tag:"Spicy & fast",
-  why:"Something new for when Mediterranean feels samey. Same bowl format as your sushi orders, with a sweet-spicy kick and no dairy.",
+  why:"Something new for when Mediterranean feels samey. Same bowl format as your sushi orders, with a sweet-spicy kick.",
   sources:[{title:"Sweet and Spicy Gochujang Chicken Bowls", by:"Monique Volz · Ambitious Kitchen", url:"https://www.ambitiouskitchen.com/?p=87258", note:"One pan, 30 minutes. Readers praise the sauce and how much can be prepped ahead."},
            {title:"Spicy Gochujang Ground Chicken Bowls", by:"Fit Foodie Finds", url:"https://fitfoodiefinds.com/ground-chicken-bowls", note:"Borrow the crunchy slaw; readers double it for lunches."}],
   prep:["Cook the gochujang chicken (30 min)","Make the slaw: shredded cabbage, carrot, rice vinegar, sesame oil","Cook a big pot of jasmine rice","Slice cucumber and scallions","Boil 3 eggs to jammy"],
@@ -155,18 +171,39 @@ const KITS = [
          {n:"Crispy rice bowl", h:"Press cold rice into a hot oiled pan for 5 min, top with chicken and an egg."},
          {n:"Gochujang noodles", h:"Toss cooked noodles with chicken, sesame oil and a splash of soy."},
          {n:"Slaw salad", h:"Big pile of slaw, chicken, cucumber, peanuts, lime."}],
-  shop:[{i:"1 lb ground chicken (or turkey)"},{i:"Gochujang, soy sauce, honey, sesame oil, rice vinegar"},{i:"Garlic, ginger, scallions"},{i:"Half a cabbage, carrots, cucumbers, butter lettuce"},{i:"Jasmine rice, noodles, eggs"},{i:"Sesame seeds, peanuts, limes"}]}
+  shop:[{i:"1 lb ground chicken (or turkey)",x:"meat",core:1},{i:"Gochujang",x:"gluten",sw:"Gluten-free gochujang"},{i:"Soy sauce",x:"gluten",sw:"Tamari"},{i:"Honey",x:"honey",sw:"Maple syrup"},{i:"Sesame oil, rice vinegar"},{i:"Garlic, ginger, scallions"},
+        {i:"Half a cabbage, carrots, cucumbers, butter lettuce"},{i:"Jasmine rice"},{i:"Noodles",x:"gluten",sw:"Rice noodles"},{i:"Eggs",x:"egg",sw:""},{i:"Sesame seeds, limes"},{i:"Peanuts",x:"nuts",sw:""}]}
 ];
 
 const CAT = {poached:"Chicken",noodlesoup:"Chicken",steamed:"Chicken",stew:"Plant-based",goddess:"Plant-based",garlic:"Plant-based",bulgogi:"Plant-based",miso:"Plant-based",curry:"Plant-based",moroccan:"Plant-based",shawarma:"Chicken",gochujang:"Chicken",salmon:"Fish"};
 const HERO = {poached:["Chicken thighs","Ginger","Scallion"],noodlesoup:["Chicken thighs","Clear broth","Bok choy"],steamed:["Chicken thighs","Shiitake","Ginger"],stew:["Chickpeas","Coconut","Greens"],goddess:["Baby bella","Eggplant","Tofu","Kale"],garlic:["Japanese eggplant","Pressed tofu","Shiitake"],bulgogi:["King oyster","Spinach","Kimchi"],miso:["Eggplant","Shiitake","Tofu"],curry:["Red lentils","Sweet potato","Spinach"],moroccan:["Lentils","Chickpeas","Squash"],shawarma:["Chicken thighs","Tahini","Sweet potato"],gochujang:["Ground chicken","Cabbage slaw"],salmon:["Salmon","Sushi rice","Avocado"]};
-const STEPS = ["choose","recipes","shop","prep"];
+const STEPS = ["diet","choose","recipes","shop","prep"];
 const GENTLE = new Set(["poached","noodlesoup","steamed"]);
 const CUISINE = {poached:"Cantonese · gentle",noodlesoup:"Chinese · gentle",steamed:"Cantonese · gentle",stew:"Middle Eastern-inspired",goddess:"Mediterranean grain bowl",garlic:"Chinese",bulgogi:"Korean",miso:"Japanese",curry:"Indian-inspired",moroccan:"Moroccan",shawarma:"Middle Eastern",gochujang:"Korean",salmon:"Japanese"};
 
-const store = { get(k,d){try{const v=localStorage.getItem("rk2_"+k);return v?JSON.parse(v):d}catch(e){return d}},
-                set(k,v){try{localStorage.setItem("rk2_"+k,JSON.stringify(v))}catch(e){}} };
-let S = store.get("state",{kit:null,step:"choose",filter:"All",per:{}});
+// Dietary preferences: each one rules out some of the tags used on shop items
+const DIETS = [
+  {id:"vegetarian", label:"Vegetarian", hint:"No meat or fish", no:["meat","fish"]},
+  {id:"vegan", label:"Vegan", hint:"No animal products", no:["meat","fish","dairy","egg","honey"]},
+  {id:"pescatarian", label:"Pescatarian", hint:"Fish, but no meat", no:["meat"]},
+  {id:"dairy", label:"Dairy-free", hint:"No milk, cheese or yogurt", no:["dairy"]},
+  {id:"gluten", label:"Gluten-free", hint:"No wheat, barley or rye", no:["gluten"]},
+  {id:"egg", label:"Egg-free", hint:"No eggs or mayo", no:["egg"]},
+  {id:"nuts", label:"Nut-free", hint:"No peanuts or tree nuts", no:["nuts"]}
+];
+// Quick tips for meal ideas and prep steps that mention something you've ruled out
+const HINTS = {egg:["skip the egg",/\beggs?\b|\byolks?\b/i],
+  dairy:["use dairy-free",/\b(feta|yogurt|cheese|cream)\b/i],
+  gluten:["use gluten-free",/\b(pitas?|lavash|noodles?|bread|couscous|farro|dumplings?|toast|soy)\b/i],
+  nuts:["skip the nuts",/\b(peanuts?|almonds?|cashews?)\b/i],
+  fish:["use a fish-free version",/\b(fish|kimchi|dashi)\b/i],
+  honey:["use maple syrup",/\bhoney\b/i]};
+
+const store = { get(k,d){try{const v=localStorage.getItem("rk3_"+k);return v?JSON.parse(v):d}catch(e){return d}},
+                set(k,v){try{localStorage.setItem("rk3_"+k,JSON.stringify(v))}catch(e){}} };
+// Shopping lists were re-split for the diet swaps, so older ticks don't carry over; the chosen kit does
+const old = (()=>{try{return JSON.parse(localStorage.getItem("rk2_state"))}catch(e){return null}})();
+let S = store.get("state",{kit:old?.kit||null,step:"diet",filter:old?.filter||"All",prefs:{diet:[],avoid:[]},showAll:false,per:{}});
 let showCopy=false, pick=null;
 const $ = id=>document.getElementById(id);
 const kit = ()=>KITS.find(k=>k.id===S.kit)||null;
@@ -174,44 +211,103 @@ const per = ()=> (S.per[S.kit] ||= {have:[],prep:[]});
 const save = ()=>store.set("state",S);
 const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 function toast(t){const el=$("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,1800)}
-const needList = ()=>{const k=kit(),p=per();return k.shop.map((x,i)=>({...x,i})).filter(x=>!p.have.includes(x.i))};
+
+const prefs = ()=>S.prefs;
+const hasPrefs = ()=>prefs().diet.length>0||prefs().avoid.length>0;
+const ruledOut = ()=>new Set(prefs().diet.flatMap(d=>DIETS.find(x=>x.id===d)?.no||[]));
+const wordRe = w=>new RegExp("\\b"+w.replace(/s$/i,"").replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(e?s)?\\b","i");
+const prefSummary = ()=>[...prefs().diet.map(d=>DIETS.find(x=>x.id===d)?.label).filter(Boolean),...prefs().avoid.map(a=>"no "+a)].join(" · ");
+
+// How a kit fits your preferences: each shop item is kept, swapped, left out, or flagged
+function fitOf(k){
+  const no=ruledOut(), av=prefs().avoid.map(wordRe);
+  const items=k.shop.map((x,i)=>{
+    const hit=[].concat(x.x||[]).some(t=>no.has(t));
+    let text=x.i, kind="";
+    if(hit)kind=x.sw===""?"out":x.sw?"swap":"no";
+    if(hit&&x.sw)text=x.sw;
+    if(kind!=="out"&&kind!=="no"&&av.some(r=>r.test(text)))kind="avoid";
+    return {...x,i,orig:x.i,text,kind}});
+  const core=items.some(x=>x.core&&x.kind==="no")||av.some(r=>r.test(k.name)||(HERO[k.id]||[]).some(h=>r.test(h)));
+  return {core,items,changes:items.filter(x=>x.kind)};
+}
+function hintsFor(text){
+  const out=[];
+  for(const t of ruledOut()){const h=HINTS[t];if(h&&h[1].test(text)&&!out.includes(h[0]))out.push(h[0])}
+  for(const w of prefs().avoid)if(wordRe(w).test(text))out.push("leave out "+w);
+  return out.map(h=>`<span class="flag">${esc(h)}</span>`).join("");
+}
+const needList = ()=>{const p=per();return fitOf(kit()).items.filter(x=>x.kind!=="out"&&!p.have.includes(x.i))};
+function fitLine(k){
+  if(!hasPrefs())return "";
+  const f=fitOf(k), n=f.changes.length;
+  return f.core?`<span class="fit no">Not a fit for your diet</span>`
+    :n?`<span class="fit swap">Fits with ${n} swap${n===1?"":"s"}</span>`:`<span class="fit good">✓ Fits as is</span>`;
+}
+function changeText(c){
+  if(c.kind==="out")return `<b>${esc(c.orig)}</b>: leave out`;
+  if(c.kind==="swap")return `${esc(c.orig)} → <b>${esc(c.text)}</b>`;
+  if(c.kind==="no")return `<b>${esc(c.orig)}</b> doesn't fit your diet`;
+  return `<b>${esc(c.text)}</b>: you're avoiding this, so leave it out or swap it`;
+}
 
 function go(step){S.step=step;showCopy=false;render();window.scrollTo({top:0,behavior:"smooth"})}
 
 function render(){
   const k=kit();
-  STEPS.forEach((s,i)=>{const b=$("s-"+s);b.disabled=!k&&s!=="choose";
+  STEPS.forEach((s,i)=>{const b=$("s-"+s);b.disabled=!k&&!["diet","choose"].includes(s);
     b.setAttribute("aria-current",S.step===s?"step":"false");
     b.classList.toggle("done",STEPS.indexOf(S.step)>i)});
   const P=$("panel");
-  if(S.step!=="choose"&&!k){S.step="choose"}
-  if(S.step==="choose"){
-    const cats=["All","Gentle","Plant-based","Chicken","Fish"];
-    const list=KITS.filter(x=>S.filter==="All"||(S.filter==="Gentle"?GENTLE.has(x.id):CAT[x.id]===S.filter));
-    P.innerHTML=`<p class="intro">Each kit is one grocery shop and one weekend prep session that turns into five different dinners. Tap one to see its recipes.</p>
-      ${S.filter==="Gentle"?`<p class="note">For days your stomach feels off: mild broths and steamed or poached chicken, with ginger and no chilli.</p>`:""}
+  if(!["diet","choose"].includes(S.step)&&!k){S.step="choose"}
+  if(S.step==="diet"){
+    const p=prefs();
+    P.innerHTML=`<div class="kit-head"><h2>Any dietary needs?</h2><p>Pick everything that applies. You'll only see kits that work for you, with ingredients swapped where needed. You can change this anytime.</p></div>
+      <div class="diets">${DIETS.map(d=>`<button class="diet" data-diet="${d.id}" aria-pressed="${p.diet.includes(d.id)}"><b>${esc(d.label)}</b><span>${esc(d.hint)}</span></button>`).join("")}</div>
+      <label class="label" for="avoid">Anything else you don't eat?</label>
+      <div class="avoidrow"><input id="avoid" type="text" autocomplete="off" placeholder="e.g. mushrooms, cilantro"><button class="btn" id="addAvoid">Add</button></div>
+      ${p.avoid.length?`<div class="pills">${p.avoid.map((w,i)=>`<button class="pill" data-unavoid="${i}" aria-label="Remove ${esc(w)}">${esc(w)} <span aria-hidden="true">×</span></button>`).join("")}</div>`:""}
+      <div class="cta"><p>${hasPrefs()?`For you: <b>${esc(prefSummary())}</b>`:"No restrictions? Just carry on."}</p><button class="btn primary" data-go="choose">Show my kits →</button></div>`;
+  } else if(S.step==="choose"){
+    const fits=KITS.filter(x=>S.showAll||!fitOf(x).core);
+    const hidden=KITS.length-KITS.filter(x=>!fitOf(x).core).length;
+    const inCat=(x,c)=>c==="All"||(c==="Gentle"?GENTLE.has(x.id):CAT[x.id]===c);
+    const cats=["All","Gentle","Plant-based","Chicken","Fish"].filter(c=>fits.some(x=>inCat(x,c)));
+    if(!cats.includes(S.filter))S.filter="All";
+    const list=fits.filter(x=>inCat(x,S.filter));
+    P.innerHTML=`<div class="prefbar"><p>${hasPrefs()?`For you: <b>${esc(prefSummary())}</b>`:"No dietary restrictions"}</p><button class="btn small" data-go="diet">Edit</button></div>
+      <p class="intro">Each kit is one grocery shop and one weekend prep that turns into five different dinners. Tap one to see its recipes.</p>
+      ${S.filter==="Gentle"?`<p class="note">For days your stomach feels off: mild broths and steamed or poached dishes, with ginger and no chilli.</p>`:""}
       <div class="filters">${cats.map(c=>`<button class="filter" data-filter="${c}" aria-pressed="${S.filter===c}">${c}</button>`).join("")}</div>
       ${k?`<div class="cta"><p>Selected: <b>${esc(k.name)}</b></p><button class="btn primary" data-go="recipes">See the recipes →</button></div>`:""}
-      <div class="grid">${list.map(x=>`<button class="card" data-kit="${x.id}" aria-pressed="${x.id===S.kit}">
+      ${list.length?`<div class="grid">${list.map(x=>`<button class="card" data-kit="${x.id}" aria-pressed="${x.id===S.kit}">
         ${x.id===S.kit?`<span class="badge">Selected</span>`:""}
         <span class="tag">${esc(CUISINE[x.id])}</span>
         <h3>${esc(x.name)}</h3>
         <p class="why">${esc(x.why)}</p>
         <span class="meta">${(HERO[x.id]||[]).map(h=>`<span class="chip">${esc(h)}</span>`).join("")}</span>
-      </button>`).join("")}</div>`;
+        ${fitLine(x)}
+      </button>`).join("")}</div>`:`<div class="empty"><p>No kits fit all of that yet.</p><button class="btn small" data-go="diet">Change preferences</button></div>`}
+      ${hidden?`<p class="note">${hidden} kit${hidden===1?" is":"s are"} built around something you don't eat. <button class="linkbtn" id="toggleAll">${S.showAll?"Hide them":"Show them anyway"}</button></p>`:""}`;
   } else if(S.step==="recipes"){
+    const f=fitOf(k);
     P.innerHTML=`<div class="kit-head"><span class="label">${esc(CUISINE[k.id])}</span><h2>${esc(k.name)}</h2><p>${esc(k.why)}</p></div>
+      ${hasPrefs()&&(f.changes.length||f.core)?`<div class="swaps"><span class="label">Adjusted for your diet</span>
+        ${f.core?`<p>This kit is built around something you don't eat, so it may not work for you.</p>`:""}
+        <ul>${f.changes.map(c=>`<li>${changeText(c)}</li>`).join("")}</ul></div>`:""}
       <span class="label">Five remixes</span>
-      <div class="list">${k.meals.map((m,i)=>`<div class="meal ${pick===i?"picked":""}"><span class="n">${i+1}</span><div><h4>${esc(m.n)}</h4><p>${esc(m.h)}</p></div></div>`).join("")}</div>
+      <div class="list">${k.meals.map((m,i)=>`<div class="meal ${pick===i?"picked":""}"><span class="n">${i+1}</span><div><h4>${esc(m.n)}</h4><p>${esc(m.h)}${hintsFor(m.h)}</p></div></div>`).join("")}</div>
       <div class="cta"><p>Too tired to decide tonight?</p><button class="btn small" id="pickOne">Pick one for me</button></div>
       <span class="label">Base recipes</span>
       ${k.sources.map(s=>`<div class="src"><a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)} ↗</a><span class="by">${esc(s.by)}</span><p>${esc(s.note)}</p></div>`).join("")}
       ${k.tip?`<p class="note">${esc(k.tip)}</p>`:""}
       <div class="cta"><p>Happy with these?</p><button class="btn primary" data-go="shop">Build grocery list →</button></div>`;
   } else if(S.step==="shop"){
-    const p=per(), need=needList();
+    const p=per(), need=needList(), f=fitOf(k), out=f.items.filter(x=>x.kind==="out");
+    const FLAG={swap:"swapped for your diet",no:"doesn't fit your diet",avoid:"you avoid this"};
     P.innerHTML=`<div class="kit-head"><span class="label">${esc(k.name)}</span><h2>Grocery list</h2><p>Tick off anything you already have at home. Then copy what's left into your notes or shopping app.</p></div>
-      <div class="list">${k.shop.map((x,i)=>`<label class="check"><input type="checkbox" id="have-${k.id}-${i}" data-have="${i}" ${p.have.includes(i)?"checked":""}><span>${esc(x.i)}${x.f?`<span class="flag">${esc(x.f)}</span>`:""}</span></label>`).join("")}</div>
+      <div class="list">${f.items.filter(x=>x.kind!=="out").map(x=>`<label class="check"><input type="checkbox" id="have-${k.id}-${x.i}" data-have="${x.i}" ${p.have.includes(x.i)?"checked":""}><span>${esc(x.text)}${x.kind?`<span class="flag">${FLAG[x.kind]}</span>`:""}${x.f?`<span class="flag">${esc(x.f)}</span>`:""}</span></label>`).join("")}</div>
+      ${out.length?`<p class="note">Left off for your diet: ${esc(out.map(x=>x.orig).join(", "))}.</p>`:""}
       <div class="copybar"><span class="count">${need.length} item${need.length===1?"":"s"} to buy</span>
         <span class="row" style="display:flex;gap:8px;flex-wrap:wrap">${p.have.length?`<button class="btn small" id="clearHave">Untick all</button>`:""}<button class="btn primary" id="copy" ${need.length?"":"disabled"}>Copy list</button></span></div>
       ${showCopy?`<label class="label" for="copyText">Select all and copy</label><textarea id="copyText" readonly>${esc(listText())}</textarea>`:""}
@@ -221,20 +317,30 @@ function render(){
     const done=p.prep.length;
     P.innerHTML=`<div class="kit-head"><span class="label">${esc(k.name)}</span><h2>Prep plan</h2><p>Do this when you have about 1½ hours, usually Sunday. After that, every dinner is about 10 minutes of putting things together.</p></div>
       <span class="label">${done} of ${k.prep.length} done</span>
-      <div class="list">${k.prep.map((x,i)=>`<label class="check"><input type="checkbox" id="pr-${k.id}-${i}" data-prep="${i}" ${p.prep.includes(i)?"checked":""}><span>${esc(x)}</span></label>`).join("")}</div>
+      <div class="list">${k.prep.map((x,i)=>`<label class="check"><input type="checkbox" id="pr-${k.id}-${i}" data-prep="${i}" ${p.prep.includes(i)?"checked":""}><span>${esc(x)}${hintsFor(x)}</span></label>`).join("")}</div>
       <p class="note">Store each part in its own container. Keep sauces and greens separate until you eat, so nothing goes soggy.</p>
       <div class="cta"><p>${done===k.prep.length?"All prepped. Enjoy the week!":"Ready for a new week?"}</p><button class="btn" id="resetKit">Start this kit fresh</button></div>
       <div class="cta"><p>Want something different next week?</p><button class="btn primary" data-go="choose">Choose another kit</button></div>`;
   }
   save();
 }
-function listText(){const k=kit();return k.name+" groceries\n"+needList().map(x=>"- "+x.i).join("\n")}
+function listText(){const k=kit();return k.name+" groceries\n"+needList().map(x=>"- "+x.text).join("\n")}
+function addAvoid(){
+  const el=$("avoid"); if(!el)return;
+  const words=el.value.split(",").map(w=>w.trim().toLowerCase()).filter(w=>w&&!prefs().avoid.includes(w));
+  if(!words.length){el.focus();return}
+  prefs().avoid.push(...new Set(words)); render(); $("avoid").focus();
+}
 
 document.addEventListener("click",async e=>{
   const t=e.target.closest("button"); if(!t||t.disabled)return;
   if(t.dataset.step){go(t.dataset.step);return}
   if(t.dataset.go){go(t.dataset.go);return}
   if(t.dataset.filter){S.filter=t.dataset.filter;render();return}
+  if(t.dataset.diet){const d=prefs().diet,id=t.dataset.diet;prefs().diet=d.includes(id)?d.filter(x=>x!==id):[...d,id];render();return}
+  if(t.dataset.unavoid!==undefined){prefs().avoid.splice(+t.dataset.unavoid,1);render();return}
+  if(t.id==="addAvoid"){addAvoid();return}
+  if(t.id==="toggleAll"){S.showAll=!S.showAll;render();return}
   if(t.dataset.kit){
     if(S.kit!==t.dataset.kit){S.kit=t.dataset.kit;pick=null}
     go("recipes");return}
@@ -247,8 +353,10 @@ document.addEventListener("click",async e=>{
     return}
   if(t.id==="resetKit"){S.per[S.kit]={have:[],prep:[]};render();toast("Fresh start for this kit")}
 });
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="avoid"){e.preventDefault();addAvoid()}});
 document.addEventListener("change",e=>{
-  const t=e.target,p=per();
+  const t=e.target; if(t.id==="avoid")return;
+  const p=per();
   const tog=(arr,i)=>arr.includes(i)?arr.filter(x=>x!==i):[...arr,i];
   if(t.dataset.have!==undefined){p.have=tog(p.have,+t.dataset.have);render()}
   if(t.dataset.prep!==undefined){p.prep=tog(p.prep,+t.dataset.prep);render()}

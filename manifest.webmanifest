@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Remix Kitchen",
   "short_name": "Remix Kitchen",
-  "description": "Weekly lactose-free meal kits: one shop, one prep, five 10-minute dinners.",
+  "description": "Weekly meal kits for how you eat: one shop, one prep, five 10-minute dinners.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

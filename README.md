@@ -1,6 +1,6 @@
 # Remix Kitchen
 
-Lactose-free weekly meal kits: one shop, one weekend prep, five 10-minute dinners.
+Weekly meal kits: one shop, one weekend prep, five 10-minute dinners. Tell it your dietary needs first and it only shows kits that fit, swapping ingredients where needed.
 
 Live app: https://deedubs531.github.io/remix-kitchen/
 

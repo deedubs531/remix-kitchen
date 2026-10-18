@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: phone-first, four-step flow (Choose → Recipes → Groceries → Prep) with a sticky step bar */
+/* Layout: phone-first, five-step flow (Diet → Choose → Recipes → Shop → Prep) with a sticky step bar */
 :root{
   --bg:#f3f5f2; --surface:#ffffff; --ink:#18302b; --muted:#5d6f69; --line:#d9e1dc;
   --accent:#d98e04; --accent-ink:#3a2600; --accent-soft:#fbefd4; --good:#2f7d5b; --good-soft:#e2f1e9;
@@ -49,7 +49,7 @@ html.popup .top h1{font-size:1.4rem}
 .top p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
 
 /* step bar */
-.steps{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:6px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.steps{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:6px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
 .step{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.8rem;font-weight:600;color:var(--muted)}
 .step .num{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.75rem;border:1.5px solid currentColor;font-variant-numeric:tabular-nums}
 .step[aria-current="step"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
@@ -60,6 +60,27 @@ html.popup .top h1{font-size:1.4rem}
 .panel{display:flex;flex-direction:column;gap:14px}
 .intro{margin:0;color:var(--muted);font-size:.92rem}
 .label{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+
+/* diet */
+.diets{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.diet{text-align:left;border:1.5px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:1px}
+.diet span{font-size:.8rem;color:var(--muted)}
+.diet[aria-pressed="true"]{border:2.5px solid var(--accent);padding:9px 11px;background:var(--accent-soft)}
+.diet[aria-pressed="true"] b::before{content:"✓ ";color:var(--good)}
+.avoidrow{display:flex;gap:8px}
+.avoidrow input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--surface);color:var(--ink);font:inherit}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pill{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:.85rem;font-weight:600}
+.prefbar{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--good-soft);border-radius:12px;padding:8px 8px 8px 14px}
+.prefbar p{margin:0;font-size:.9rem;min-width:0}
+.linkbtn{border:0;background:none;padding:0;font-weight:600;text-decoration:underline;color:var(--ink)}
+.fit{font-size:.8rem;font-weight:600}
+.fit.good{color:var(--good)}
+.fit.swap{color:var(--muted)}
+.fit.no{color:var(--accent-ink);background:var(--accent-soft);padding:1px 6px;border-radius:5px;align-self:flex-start}
+.swaps{background:var(--good-soft);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:4px}
+.swaps ul{margin:0;padding-left:18px;font-size:.9rem}
+.swaps p{margin:0;font-size:.9rem}
 
 /* choose */
 .filters{display:flex;gap:8px;flex-wrap:wrap}
@@ -123,7 +144,7 @@ html.popup .top h1{font-size:1.4rem}
   <header class="top">
     <div>
       <h1>Remix Kitchen</h1>
-      <p>Pick a kit, shop once, prep once, then remix it into five different 10-minute dinners. All lactose-free.</p>
+      <p>Pick a kit, shop once, prep once, then remix it into five different 10-minute dinners. Tailored to how you eat.</p>
     </div>
     <div class="actions">
       <button class="btn small" id="install" hidden>Install app</button>
@@ -132,10 +153,11 @@ html.popup .top h1{font-size:1.4rem}
   </header>
 
   <nav class="steps" aria-label="Steps">
-    <button class="step" data-step="choose" id="s-choose"><span class="num">1</span>Choose</button>
-    <button class="step" data-step="recipes" id="s-recipes"><span class="num">2</span>Recipes</button>
-    <button class="step" data-step="shop" id="s-shop"><span class="num">3</span>Groceries</button>
-    <button class="step" data-step="prep" id="s-prep"><span class="num">4</span>Prep</button>
+    <button class="step" data-step="diet" id="s-diet"><span class="num">1</span>Diet</button>
+    <button class="step" data-step="choose" id="s-choose"><span class="num">2</span>Choose</button>
+    <button class="step" data-step="recipes" id="s-recipes"><span class="num">3</span>Recipes</button>
+    <button class="step" data-step="shop" id="s-shop"><span class="num">4</span>Shop</button>
+    <button class="step" data-step="prep" id="s-prep"><span class="num">5</span>Prep</button>
   </nav>
 
   <main id="panel" class="panel"></main>
