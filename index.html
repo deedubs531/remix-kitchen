@@ -256,6 +256,7 @@ const KITS = [
 const CAT = {stew:"Plant-based",goddess:"Plant-based",garlic:"Plant-based",bulgogi:"Plant-based",miso:"Plant-based",curry:"Plant-based",moroccan:"Plant-based",shawarma:"Chicken",gochujang:"Chicken",salmon:"Fish"};
 const HERO = {stew:["Chickpeas","Coconut","Greens"],goddess:["Baby bella","Eggplant","Tofu","Kale"],garlic:["Japanese eggplant","Pressed tofu","Shiitake"],bulgogi:["King oyster","Spinach","Kimchi"],miso:["Eggplant","Shiitake","Tofu"],curry:["Red lentils","Sweet potato","Spinach"],moroccan:["Lentils","Chickpeas","Squash"],shawarma:["Chicken thighs","Tahini","Sweet potato"],gochujang:["Ground chicken","Cabbage slaw"],salmon:["Salmon","Sushi rice","Avocado"]};
 const STEPS = ["choose","recipes","shop","prep"];
+const CUISINE = {stew:"Middle Eastern-inspired",goddess:"Mediterranean grain bowl",garlic:"Chinese",bulgogi:"Korean",miso:"Japanese",curry:"Indian-inspired",moroccan:"Moroccan",shawarma:"Middle Eastern",gochujang:"Korean",salmon:"Japanese"};
 
 const store = { get(k,d){try{const v=localStorage.getItem("rk2_"+k);return v?JSON.parse(v):d}catch(e){return d}},
                 set(k,v){try{localStorage.setItem("rk2_"+k,JSON.stringify(v))}catch(e){}} };
@@ -286,18 +287,18 @@ function render(){
       ${k?`<div class="cta"><p>Selected: <b>${esc(k.name)}</b></p><button class="btn primary" data-go="recipes">See the recipes →</button></div>`:""}
       <div class="grid">${list.map(x=>`<button class="card" data-kit="${x.id}" aria-pressed="${x.id===S.kit}">
         ${x.id===S.kit?`<span class="badge">Selected</span>`:""}
-        <span class="tag">${esc(x.tag)}</span>
+        <span class="tag">${esc(CUISINE[x.id])}</span>
         <h3>${esc(x.name)}</h3>
         <p class="why">${esc(x.why)}</p>
         <span class="meta">${(HERO[x.id]||[]).map(h=>`<span class="chip">${esc(h)}</span>`).join("")}</span>
       </button>`).join("")}</div>`;
   } else if(S.step==="recipes"){
-    P.innerHTML=`<div class="kit-head"><span class="label">${esc(k.tag)}</span><h2>${esc(k.name)}</h2><p>${esc(k.why)}</p></div>
+    P.innerHTML=`<div class="kit-head"><span class="label">${esc(CUISINE[k.id])}</span><h2>${esc(k.name)}</h2><p>${esc(k.why)}</p></div>
       <span class="label">Five remixes</span>
       <div class="list">${k.meals.map((m,i)=>`<div class="meal ${pick===i?"picked":""}"><span class="n">${i+1}</span><div><h4>${esc(m.n)}</h4><p>${esc(m.h)}</p></div></div>`).join("")}</div>
       <div class="cta"><p>Too tired to decide tonight?</p><button class="btn small" id="pickOne">Pick one for me</button></div>
       <span class="label">Base recipes</span>
-      ${k.sources.map(s=>`<div class="src"><a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)} ↗</a><span class="by">${esc(s.by)}</span>${s.rating?`<span class="rating">${esc(s.rating)}</span>`:""}<p>${esc(s.note)}</p></div>`).join("")}
+      ${k.sources.map(s=>`<div class="src"><a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)} ↗</a><span class="by">${esc(s.by)}</span><p>${esc(s.note)}</p></div>`).join("")}
       ${k.tip?`<p class="note">${esc(k.tip)}</p>`:""}
       <div class="cta"><p>Happy with these?</p><button class="btn primary" data-go="shop">Build grocery list →</button></div>`;
   } else if(S.step==="shop"){
