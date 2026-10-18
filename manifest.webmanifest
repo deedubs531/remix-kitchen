@@ -1,4 +1,5 @@
 {
+  "id": "./",
   "name": "Remix Kitchen",
   "short_name": "Remix Kitchen",
   "description": "Weekly lactose-free meal kits: one shop, one prep, five 10-minute dinners.",
@@ -23,6 +24,45 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "food",
+    "lifestyle"
+  ],
+  "shortcuts": [
+    {
+      "name": "Grocery list",
+      "short_name": "Groceries",
+      "url": "./?step=shop",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Prep plan",
+      "short_name": "Prep",
+      "url": "./?step=prep",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Choose a kit",
+      "short_name": "Choose",
+      "url": "./?step=choose",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

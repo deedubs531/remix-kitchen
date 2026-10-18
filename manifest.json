@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Remix Kitchen",
+  "short_name": "Remix Kitchen",
+  "version": "1.0.0",
+  "description": "Weekly lactose-free meal kits: one shop, one prep, five 10-minute dinners.",
+  "icons": {
+    "192": "icon-192.png",
+    "512": "icon-512.png"
+  },
+  "action": {
+    "default_title": "Remix Kitchen",
+    "default_popup": "index.html?popup=1",
+    "default_icon": {
+      "192": "icon-192.png"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "remix-kitchen@deedubs531.github.io",
+      "strict_min_version": "115.0"
+    }
+  }
+}
