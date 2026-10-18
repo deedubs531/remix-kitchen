@@ -203,7 +203,7 @@ const store = { get(k,d){try{const v=localStorage.getItem("rk3_"+k);return v?JSO
                 set(k,v){try{localStorage.setItem("rk3_"+k,JSON.stringify(v))}catch(e){}} };
 // Shopping lists were re-split for the diet swaps, so older ticks don't carry over; the chosen kit does
 const old = (()=>{try{return JSON.parse(localStorage.getItem("rk2_state"))}catch(e){return null}})();
-let S = store.get("state",{kit:old?.kit||null,step:"diet",filter:old?.filter||"All",prefs:{diet:[],avoid:[]},showAll:false,per:{}});
+let S = store.get("state",{kit:old?.kit||null,step:"choose",filter:old?.filter||"All",prefs:{diet:[],avoid:[]},showAll:false,per:{}});
 let showCopy=false, pick=null;
 const $ = id=>document.getElementById(id);
 const kit = ()=>KITS.find(k=>k.id===S.kit)||null;
@@ -257,17 +257,17 @@ function render(){
   const k=kit();
   STEPS.forEach((s,i)=>{const b=$("s-"+s);b.disabled=!k&&!["diet","choose"].includes(s);
     b.setAttribute("aria-current",S.step===s?"step":"false");
-    b.classList.toggle("done",STEPS.indexOf(S.step)>i)});
+    b.classList.toggle("done",STEPS.indexOf(S.step)>i&&(s!=="diet"||hasPrefs()))});
   const P=$("panel");
   if(!["diet","choose"].includes(S.step)&&!k){S.step="choose"}
   if(S.step==="diet"){
     const p=prefs();
-    P.innerHTML=`<div class="kit-head"><h2>Any dietary needs?</h2><p>Pick everything that applies. You'll only see kits that work for you, with ingredients swapped where needed. You can change this anytime.</p></div>
+    P.innerHTML=`<div class="kit-head"><span class="label">Optional</span><h2>Any dietary needs?</h2><p>Pick anything that applies and you'll only see kits that work for you, with ingredients swapped where needed. Leave it blank to see everything.</p></div>
       <div class="diets">${DIETS.map(d=>`<button class="diet" data-diet="${d.id}" aria-pressed="${p.diet.includes(d.id)}"><b>${esc(d.label)}</b><span>${esc(d.hint)}</span></button>`).join("")}</div>
       <label class="label" for="avoid">Anything else you don't eat?</label>
       <div class="avoidrow"><input id="avoid" type="text" autocomplete="off" placeholder="e.g. mushrooms, cilantro"><button class="btn" id="addAvoid">Add</button></div>
       ${p.avoid.length?`<div class="pills">${p.avoid.map((w,i)=>`<button class="pill" data-unavoid="${i}" aria-label="Remove ${esc(w)}">${esc(w)} <span aria-hidden="true">×</span></button>`).join("")}</div>`:""}
-      <div class="cta"><p>${hasPrefs()?`For you: <b>${esc(prefSummary())}</b>`:"No restrictions? Just carry on."}</p><button class="btn primary" data-go="choose">Show my kits →</button></div>`;
+      <div class="cta"><p>${hasPrefs()?`For you: <b>${esc(prefSummary())}</b>`:"Nothing to add? Skip ahead."}</p><button class="btn primary" data-go="choose">${hasPrefs()?"Show my kits →":"See all kits →"}</button></div>`;
   } else if(S.step==="choose"){
     const fits=KITS.filter(x=>S.showAll||!fitOf(x).core);
     const hidden=KITS.length-KITS.filter(x=>!fitOf(x).core).length;
@@ -275,7 +275,7 @@ function render(){
     const cats=["All","Gentle","Plant-based","Chicken","Fish"].filter(c=>fits.some(x=>inCat(x,c)));
     if(!cats.includes(S.filter))S.filter="All";
     const list=fits.filter(x=>inCat(x,S.filter));
-    P.innerHTML=`<div class="prefbar"><p>${hasPrefs()?`For you: <b>${esc(prefSummary())}</b>`:"No dietary restrictions"}</p><button class="btn small" data-go="diet">Edit</button></div>
+    P.innerHTML=`${hasPrefs()?`<div class="prefbar"><p>For you: <b>${esc(prefSummary())}</b></p><button class="btn small" data-go="diet">Edit</button></div>`:""}
       <p class="intro">Each kit is one grocery shop and one weekend prep that turns into five different dinners. Tap one to see its recipes.</p>
       ${S.filter==="Gentle"?`<p class="note">For days your stomach feels off: mild broths and steamed or poached dishes, with ginger and no chilli.</p>`:""}
       <div class="filters">${cats.map(c=>`<button class="filter" data-filter="${c}" aria-pressed="${S.filter===c}">${c}</button>`).join("")}</div>
