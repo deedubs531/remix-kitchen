@@ -132,6 +132,13 @@ html.popup .top h1{font-size:1.4rem}
 .copybar .count{font-size:.9rem;font-weight:600}
 #copyText{width:100%;min-height:140px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:.9rem}
 .prep-step{display:grid;grid-template-columns:auto 1fr;gap:12px}
+.combine{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.combine summary{font-weight:600;cursor:pointer}
+.combine[open] summary{margin-bottom:8px}
+.combine .note{margin-bottom:8px}
+.filter:disabled{opacity:.4;cursor:not-allowed}
+.flag.shared{background:var(--good-soft);color:var(--good)}
+.prep-kit{font-size:1.15rem;margin-top:6px}
 .empty{background:var(--surface);border:1px dashed var(--line);border-radius:14px;padding:22px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
 .empty p{margin:0;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;font-size:.9rem;z-index:20}

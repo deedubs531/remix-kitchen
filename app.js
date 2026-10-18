@@ -109,6 +109,36 @@ const KITS = [
   shop:[{i:"1½ lb boneless chicken thighs",x:"meat",core:1},{i:"Dried shiitake mushrooms"},{i:"Ginger, scallions"},{i:"Light soy sauce",x:"gluten",sw:"Tamari"},{i:"Oyster sauce",x:["gluten","fish"],sw:"Gluten-free vegetarian oyster sauce"},
         {i:"Cornstarch"},{i:"Shaoxing wine",x:"gluten",sw:"Dry sherry"},{i:"Bok choy or gai lan, spinach"},{i:"Rice"},{i:"Thin noodles",x:"gluten",sw:"Thin rice noodles"},{i:"Eggs",x:"egg",sw:""},{i:"Chicken broth",x:"meat",core:1}]},
 
+{ id:"yudofu", name:"Simmered Eggplant & Hot Tofu", tag:"Gentle",
+  why:"Japanese eggplant simmered in a light dashi broth, tofu warmed in kombu water, and spinach with sesame. Soft, savoury and very mild.",
+  sources:[{title:"Hot Tofu (Yudofu)", by:"Nami · Just One Cookbook", url:"https://www.justonecookbook.com/hot-tofu-yudofu/", note:"Tofu warmed in kombu broth with a soy dipping sauce. The sauce uses bonito flakes; leave them out for a plant-based dip."},
+           {title:"Nasu Nibitashi (Braised Eggplant)", by:"Japanese Cooking 101", url:"https://www.japanesecooking101.com/nasu-nibitashi-braised-eggplant-recipe/", note:"Scored Japanese eggplant seared, then simmered in dashi, soy, sake and mirin and cooled in the broth. Finish with grated ginger and scallion."},
+           {title:"Spinach with Sesame Sauce (Gomaae)", by:"Nami · Just One Cookbook", url:"https://www.justonecookbook.com/spinach-with-sesame-sauce/", note:"Blanched spinach in a sweet sesame dressing. Squeeze the spinach well so the dressing stays thick."}],
+  prep:["Soak a piece of kombu in water for 1–2 hours (or steep it over the lowest heat) for the tofu broth","Score and sear 4 Japanese eggplants, simmer in dashi, soy, sake and mirin for 15–20 min, then cool in the liquid","Blanch 2 bunches of spinach, squeeze dry, toss with ground sesame, soy and sugar","Make the dipping sauce (soy, sake, mirin) and jar it","Cook a pot of short-grain rice; slice scallions and trim the mushrooms"],
+  meals:[{n:"Yudofu night", h:"Warm tofu and mushrooms in the kombu broth, dip in the sauce, with rice and sesame spinach."},
+         {n:"Eggplant over rice", h:"Simmered eggplant, warm or cold, over rice with a spoon of its broth, grated ginger and scallion."},
+         {n:"Tofu mushroom soup", h:"Kombu broth with tofu, shiitake, enoki and a handful of spinach, seasoned with a splash of soy."},
+         {n:"Broth over rice", h:"Rice in hot kombu broth, topped with chopped eggplant, spinach and sesame."},
+         {n:"Soft egg plate", h:"Rice, sesame spinach, simmered eggplant and a soft-boiled egg."}],
+  shop:[{i:"2 blocks medium-firm tofu"},{i:"Kombu"},{i:"4 Japanese eggplants"},{i:"Dashi",x:"fish",sw:"Kombu (for a plant-based dashi)"},{i:"Soy sauce",x:"gluten",sw:"Tamari"},{i:"Sake, mirin, sugar"},
+        {i:"2 bunches spinach"},{i:"Sesame seeds"},{i:"Shiitake + enoki mushrooms"},{i:"Ginger, scallions"},{i:"Short-grain rice"},{i:"Eggs",x:"egg",sw:""}],
+  tip:"The simmered eggplant tastes even better on day two. Keep it in its broth."},
+
+{ id:"jadesoup", name:"Ginger Tofu & Greens Soup", tag:"Gentle",
+  why:"A clear ginger broth with spinach, tofu and mushrooms, plus shiitake-braised tofu and soft steamed Japanese eggplant. Calm, green and filling.",
+  sources:[{title:"Clear Spinach Soup with Tofu", by:"Catherine Saxelby · Foodwatch", url:"https://www.foodwatch.com.au/recipe/clear-spinach-soup-with-tofu/", note:"Known in Chinese as emerald and white jade soup. Spinach, tofu, mushrooms and plenty of grated ginger, simmered gently for 2–3 minutes."},
+           {title:"Quick & Easy Braised Tofu (Hongshao Dofu)", by:"The Woks of Life", url:"https://thewoksoflife.com/quick-easy-braised-tofu-hongshao-dofu/", note:"Seared tofu braised with shiitake in a light soy sauce. Toss in bok choy at the end."},
+           {title:"Chinese Eggplant with Garlic", by:"Cook With Dana", url:"https://cookwithdana.com/chinese-eggplant-with-garlic-sauce/", note:"Eggplant steamed 10–15 minutes, then dressed with garlic, hot oil and soy. Leave out the chilli."}],
+  prep:["Make a big pot of light broth with ginger slices, scallion and soaked dried shiitake (keep the soaking water)","Sear and braise firm tofu with the shiitake (about 20 min)","Steam 3 Japanese eggplants until soft (10–15 min), dress with garlic, soy and a little hot oil","Cook a pot of jasmine rice","Wash spinach and bok choy"],
+  meals:[{n:"Jade soup", h:"Heat broth with grated ginger, add spinach, soft tofu and mushrooms, simmer 3 minutes."},
+         {n:"Braised tofu over rice", h:"Reheat the braised tofu and shiitake, wilt in bok choy, spoon over rice."},
+         {n:"Steamed eggplant plate", h:"Garlic eggplant with rice and quickly blanched spinach."},
+         {n:"Tofu noodle soup", h:"Thin noodles in the broth with braised tofu, bok choy and scallion."},
+         {n:"Eggplant & tofu jook", h:"Simmer rice in broth until soft, top with chopped eggplant, tofu and spinach."}],
+  shop:[{i:"2 blocks firm tofu"},{i:"1 block soft or silken tofu"},{i:"3 Japanese eggplants"},{i:"Dried shiitake + button mushrooms"},{i:"Big knob of ginger, garlic, scallions"},{i:"Vegetable broth"},
+        {i:"Light soy sauce",x:"gluten",sw:"Tamari"},{i:"Shaoxing wine",x:"gluten",sw:"Dry sherry"},{i:"Big bag of spinach, baby bok choy"},{i:"Jasmine rice"},{i:"Thin noodles",x:"gluten",sw:"Thin rice noodles"},{i:"Sesame oil, neutral oil"}],
+  tip:"Keep the broth at a gentle simmer once the tofu is in so it stays silky."},
+
 { id:"curry", name:"Red Lentil Curry", tag:"4.97★ · 2,800+ ratings",
   why:"You saved Nisha Vora's not-chicken and Lidey Heuck's red curry lentils. This is Nisha's most-rated recipe, creamy from coconut milk.",
   sources:[{title:"Red Lentil Curry", by:"Nisha Vora · Rainbow Plant Life", rating:"4.97★ from about 2,800 votes", url:"https://rainbowplantlife.com/red-lentil-curry/", note:"Creamy from coconut milk and almond butter. Make a double batch."}],
@@ -175,11 +205,11 @@ const KITS = [
         {i:"Half a cabbage, carrots, cucumbers, butter lettuce"},{i:"Jasmine rice"},{i:"Noodles",x:"gluten",sw:"Rice noodles"},{i:"Eggs",x:"egg",sw:""},{i:"Sesame seeds, limes"},{i:"Peanuts",x:"nuts",sw:""}]}
 ];
 
-const CAT = {poached:"Chicken",noodlesoup:"Chicken",steamed:"Chicken",stew:"Plant-based",goddess:"Plant-based",garlic:"Plant-based",bulgogi:"Plant-based",miso:"Plant-based",curry:"Plant-based",moroccan:"Plant-based",shawarma:"Chicken",gochujang:"Chicken",salmon:"Fish"};
-const HERO = {poached:["Chicken thighs","Ginger","Scallion"],noodlesoup:["Chicken thighs","Clear broth","Bok choy"],steamed:["Chicken thighs","Shiitake","Ginger"],stew:["Chickpeas","Coconut","Greens"],goddess:["Baby bella","Eggplant","Tofu","Kale"],garlic:["Japanese eggplant","Pressed tofu","Shiitake"],bulgogi:["King oyster","Spinach","Kimchi"],miso:["Eggplant","Shiitake","Tofu"],curry:["Red lentils","Sweet potato","Spinach"],moroccan:["Lentils","Chickpeas","Squash"],shawarma:["Chicken thighs","Tahini","Sweet potato"],gochujang:["Ground chicken","Cabbage slaw"],salmon:["Salmon","Sushi rice","Avocado"]};
+const CAT = {yudofu:"Plant-based",jadesoup:"Plant-based",poached:"Chicken",noodlesoup:"Chicken",steamed:"Chicken",stew:"Plant-based",goddess:"Plant-based",garlic:"Plant-based",bulgogi:"Plant-based",miso:"Plant-based",curry:"Plant-based",moroccan:"Plant-based",shawarma:"Chicken",gochujang:"Chicken",salmon:"Fish"};
+const HERO = {yudofu:["Japanese eggplant","Tofu","Spinach","Mushrooms"],jadesoup:["Tofu","Spinach","Shiitake","Japanese eggplant"],poached:["Chicken thighs","Ginger","Scallion"],noodlesoup:["Chicken thighs","Clear broth","Bok choy"],steamed:["Chicken thighs","Shiitake","Ginger"],stew:["Chickpeas","Coconut","Greens"],goddess:["Baby bella","Eggplant","Tofu","Kale"],garlic:["Japanese eggplant","Pressed tofu","Shiitake"],bulgogi:["King oyster","Spinach","Kimchi"],miso:["Eggplant","Shiitake","Tofu"],curry:["Red lentils","Sweet potato","Spinach"],moroccan:["Lentils","Chickpeas","Squash"],shawarma:["Chicken thighs","Tahini","Sweet potato"],gochujang:["Ground chicken","Cabbage slaw"],salmon:["Salmon","Sushi rice","Avocado"]};
 const STEPS = ["diet","choose","recipes","shop","prep"];
-const GENTLE = new Set(["poached","noodlesoup","steamed"]);
-const CUISINE = {poached:"Cantonese · gentle",noodlesoup:"Chinese · gentle",steamed:"Cantonese · gentle",stew:"Middle Eastern-inspired",goddess:"Mediterranean grain bowl",garlic:"Chinese",bulgogi:"Korean",miso:"Japanese",curry:"Indian-inspired",moroccan:"Moroccan",shawarma:"Middle Eastern",gochujang:"Korean",salmon:"Japanese"};
+const GENTLE = new Set(["poached","noodlesoup","steamed","yudofu","jadesoup","miso"]);
+const CUISINE = {yudofu:"Japanese · gentle",jadesoup:"Chinese · gentle",poached:"Cantonese · gentle",noodlesoup:"Chinese · gentle",steamed:"Cantonese · gentle",stew:"Middle Eastern-inspired",goddess:"Mediterranean grain bowl",garlic:"Chinese",bulgogi:"Korean",miso:"Japanese · gentle",curry:"Indian-inspired",moroccan:"Moroccan",shawarma:"Middle Eastern",gochujang:"Korean",salmon:"Japanese"};
 
 // Dietary preferences: each one rules out some of the tags used on shop items
 const DIETS = [
@@ -204,6 +234,7 @@ const store = { get(k,d){try{const v=localStorage.getItem("rk3_"+k);return v?JSO
 // Shopping lists were re-split for the diet swaps, so older ticks don't carry over; the chosen kit does
 const old = (()=>{try{return JSON.parse(localStorage.getItem("rk2_state"))}catch(e){return null}})();
 let S = store.get("state",{kit:old?.kit||null,step:"choose",filter:old?.filter||"All",prefs:{diet:[],avoid:[]},showAll:false,per:{}});
+S.extra ||= []; S.have ||= {};
 let showCopy=false, pick=null;
 const $ = id=>document.getElementById(id);
 const kit = ()=>KITS.find(k=>k.id===S.kit)||null;
@@ -237,7 +268,41 @@ function hintsFor(text){
   for(const w of prefs().avoid)if(wordRe(w).test(text))out.push("leave out "+w);
   return out.map(h=>`<span class="flag">${esc(h)}</span>`).join("");
 }
-const needList = ()=>{const p=per();return fitOf(kit()).items.filter(x=>x.kind!=="out"&&!p.have.includes(x.i))};
+// This week's shop: the selected kit plus up to two more, merged into one grocery list
+const MAX_EXTRA = 2;
+const plan = ()=>[S.kit,...S.extra.filter(id=>id!==S.kit)].map(id=>KITS.find(k=>k.id===id)).filter(Boolean);
+const planKey = ()=>plan().map(k=>k.id).sort().join("+");
+const haveList = ()=>(S.have[planKey()] ||= []);
+// Split "Garlic, ginger + scallions" into single ingredients, leaving commas inside brackets alone
+function parts(text){
+  const out=[];let depth=0,cur="";
+  for(let j=0;j<text.length;j++){
+    const c=text[j];
+    if(c==="(")depth++; if(c===")")depth--;
+    if(!depth&&c===","){out.push(cur);cur="";continue}
+    if(!depth&&text.startsWith(" + ",j)){out.push(cur);cur="";j+=2;continue}
+    cur+=c}
+  out.push(cur);return out.map(x=>x.trim()).filter(Boolean);
+}
+const QTY = /^((?:\d[\d½¼¾.\/–-]*|[½¼¾])\s*(?:lb|oz|cups?|cans?|blocks?|bunch(?:es)?)?\s+(?:of\s+)?|(?:half an?|big knob of|big bag of|bag of|bunch of)\s+)/i;
+const keyOf = t=>t.toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-z& ]/g," ").replace(/\s+/g," ").trim().replace(/(es|s)$/,"");
+function groceries(){
+  const kits=plan(), multi=kits.length>1, map=new Map();
+  for(const k of kits)for(const x of fitOf(k).items){
+    if(x.kind==="out")continue;
+    for(const part of multi?parts(x.text):[x.text]){
+      const m=multi?part.match(QTY):null, qty=m?m[1].trim().replace(/\s+of$/i,""):"", rest=m?part.slice(m[1].length):part;
+      const key=multi?keyOf(rest):keyOf(part);
+      const e=map.get(key)||{key,text:part,name:rest,qtys:[],bare:false,kits:new Set(),kinds:new Set()};
+      if(qty)e.qtys.push(qty.toLowerCase());else e.bare=true;
+      e.kits.add(k.id); if(x.kind)e.kinds.add(x.kind);
+      map.set(key,e)}}
+  return [...map.values()].map(e=>{
+    const many=e.qtys.length>1||(e.qtys.length&&e.bare&&e.kits.size>1);
+    const cap=t=>t.charAt(0).toUpperCase()+t.slice(1);
+    return {...e,text:cap(many?`${e.name} (${e.qtys.join(" + ")}${e.bare?" + extra":""})`:e.text)}});
+}
+const needList = ()=>{const h=haveList();return groceries().filter(e=>!h.includes(e.key))};
 function fitLine(k){
   if(!hasPrefs())return "";
   const f=fitOf(k), n=f.changes.length;
@@ -277,11 +342,11 @@ function render(){
     const list=fits.filter(x=>inCat(x,S.filter));
     P.innerHTML=`${hasPrefs()?`<div class="prefbar"><p>For you: <b>${esc(prefSummary())}</b></p><button class="btn small" data-go="diet">Edit</button></div>`:""}
       <p class="intro">Each kit is one grocery shop and one weekend prep that turns into five different dinners. Tap one to see its recipes.</p>
-      ${S.filter==="Gentle"?`<p class="note">For days your stomach feels off: mild broths and steamed or poached dishes, with ginger and no chilli.</p>`:""}
+      ${S.filter==="Gentle"?`<p class="note">For days your stomach feels off: mild broths, steamed or simmered chicken, tofu, mushrooms, Japanese eggplant and leafy greens. Ginger, no chilli.</p>`:""}
       <div class="filters">${cats.map(c=>`<button class="filter" data-filter="${c}" aria-pressed="${S.filter===c}">${c}</button>`).join("")}</div>
-      ${k?`<div class="cta"><p>Selected: <b>${esc(k.name)}</b></p><button class="btn primary" data-go="recipes">See the recipes →</button></div>`:""}
+      ${k?`<div class="cta"><p>Selected: <b>${esc(plan().map(x=>x.name).join(" + "))}</b></p><button class="btn primary" data-go="recipes">See the recipes →</button></div>`:""}
       ${list.length?`<div class="grid">${list.map(x=>`<button class="card" data-kit="${x.id}" aria-pressed="${x.id===S.kit}">
-        ${x.id===S.kit?`<span class="badge">Selected</span>`:""}
+        ${x.id===S.kit?`<span class="badge">Selected</span>`:S.extra.includes(x.id)?`<span class="badge">In this shop</span>`:""}
         <span class="tag">${esc(CUISINE[x.id])}</span>
         <h3>${esc(x.name)}</h3>
         <p class="why">${esc(x.why)}</p>
@@ -292,6 +357,7 @@ function render(){
   } else if(S.step==="recipes"){
     const f=fitOf(k);
     P.innerHTML=`<div class="kit-head"><span class="label">${esc(CUISINE[k.id])}</span><h2>${esc(k.name)}</h2><p>${esc(k.why)}</p></div>
+      ${S.extra.length?`<p class="note">Also in this week's shop: ${plan().slice(1).map(x=>`<button class="linkbtn" data-kit="${x.id}">${esc(x.name)}</button>`).join(", ")}</p>`:""}
       ${hasPrefs()&&(f.changes.length||f.core)?`<div class="swaps"><span class="label">Adjusted for your diet</span>
         ${f.core?`<p>This kit is built around something you don't eat, so it may not work for you.</p>`:""}
         <ul>${f.changes.map(c=>`<li>${changeText(c)}</li>`).join("")}</ul></div>`:""}
@@ -301,30 +367,36 @@ function render(){
       <span class="label">Base recipes</span>
       ${k.sources.map(s=>`<div class="src"><a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)} ↗</a><span class="by">${esc(s.by)}</span><p>${esc(s.note)}</p></div>`).join("")}
       ${k.tip?`<p class="note">${esc(k.tip)}</p>`:""}
-      <div class="cta"><p>Happy with these?</p><button class="btn primary" data-go="shop">Build grocery list →</button></div>`;
+      <div class="cta"><p>Happy with these? You can add another kit to the same shop on the next step.</p><button class="btn primary" data-go="shop">Build grocery list →</button></div>`;
   } else if(S.step==="shop"){
-    const p=per(), need=needList(), f=fitOf(k), out=f.items.filter(x=>x.kind==="out");
+    const kits=plan(), multi=kits.length>1, have=haveList(), list=groceries(), need=needList();
+    const out=[...new Set(kits.flatMap(x=>fitOf(x).items.filter(i=>i.kind==="out").map(i=>i.orig)))];
+    const others=KITS.filter(x=>x.id!==S.kit&&(S.showAll||!fitOf(x).core||S.extra.includes(x.id)));
+    const full=S.extra.length>=MAX_EXTRA;
     const FLAG={swap:"swapped for your diet",no:"doesn't fit your diet",avoid:"you avoid this"};
-    P.innerHTML=`<div class="kit-head"><span class="label">${esc(k.name)}</span><h2>Grocery list</h2><p>Tick off anything you already have at home. Then copy what's left into your notes or shopping app.</p></div>
-      <div class="list">${f.items.filter(x=>x.kind!=="out").map(x=>`<label class="check"><input type="checkbox" id="have-${k.id}-${x.i}" data-have="${x.i}" ${p.have.includes(x.i)?"checked":""}><span>${esc(x.text)}${x.kind?`<span class="flag">${FLAG[x.kind]}</span>`:""}${x.f?`<span class="flag">${esc(x.f)}</span>`:""}</span></label>`).join("")}</div>
-      ${out.length?`<p class="note">Left off for your diet: ${esc(out.map(x=>x.orig).join(", "))}.</p>`:""}
+    P.innerHTML=`<div class="kit-head"><span class="label">${esc(kits.map(x=>x.name).join(" + "))}</span><h2>Grocery list</h2><p>${multi?`One list for ${kits.length} kits, with shared ingredients combined. `:""}Tick off anything you already have at home. Then copy what's left into your notes or shopping app.</p></div>
+      <details class="combine" ${multi?"open":""}><summary>${multi?`Shopping for ${kits.length} kits`:"Cooking more than one kit this week?"}</summary>
+        <p class="note">${full?`That's the most for one shop. Remove one to swap it out.`:`Add up to ${MAX_EXTRA-S.extra.length} more kit${MAX_EXTRA-S.extra.length===1?"":"s"} to shop for everything in one trip.`}</p>
+        <div class="filters">${others.map(o=>{const on=S.extra.includes(o.id);return `<button class="filter" data-extra="${o.id}" aria-pressed="${on}" ${!on&&full?"disabled":""}>${on?"✓ ":"+ "}${esc(o.name)}</button>`}).join("")}</div></details>
+      <div class="list">${list.map(e=>`<label class="check"><input type="checkbox" id="have-${esc(e.key).replace(/\W+/g,"-")}" data-have="${esc(e.key)}" ${have.includes(e.key)?"checked":""}><span>${esc(e.text)}${[...e.kinds].map(x=>`<span class="flag">${FLAG[x]}</span>`).join("")}${multi&&e.kits.size>1?`<span class="flag shared">${e.kits.size===kits.length&&kits.length===2?"both kits":e.kits.size+" kits"}</span>`:""}</span></label>`).join("")}</div>
+      ${out.length?`<p class="note">Left off for your diet: ${esc(out.join(", "))}.</p>`:""}
       <div class="copybar"><span class="count">${need.length} item${need.length===1?"":"s"} to buy</span>
-        <span class="row" style="display:flex;gap:8px;flex-wrap:wrap">${p.have.length?`<button class="btn small" id="clearHave">Untick all</button>`:""}<button class="btn primary" id="copy" ${need.length?"":"disabled"}>Copy list</button></span></div>
+        <span class="row" style="display:flex;gap:8px;flex-wrap:wrap">${have.length?`<button class="btn small" id="clearHave">Untick all</button>`:""}<button class="btn primary" id="copy" ${need.length?"":"disabled"}>Copy list</button></span></div>
       ${showCopy?`<label class="label" for="copyText">Select all and copy</label><textarea id="copyText" readonly>${esc(listText())}</textarea>`:""}
       <div class="cta"><p>Got your groceries?</p><button class="btn primary" data-go="prep">Prep plan →</button></div>`;
   } else {
-    const p=per();
-    const done=p.prep.length;
-    P.innerHTML=`<div class="kit-head"><span class="label">${esc(k.name)}</span><h2>Prep plan</h2><p>Do this when you have about 1½ hours, usually Sunday. After that, every dinner is about 10 minutes of putting things together.</p></div>
-      <span class="label">${done} of ${k.prep.length} done</span>
-      <div class="list">${k.prep.map((x,i)=>`<label class="check"><input type="checkbox" id="pr-${k.id}-${i}" data-prep="${i}" ${p.prep.includes(i)?"checked":""}><span>${esc(x)}${hintsFor(x)}</span></label>`).join("")}</div>
+    const kits=plan(), multi=kits.length>1;
+    const total=kits.reduce((n,x)=>n+x.prep.length,0), done=kits.reduce((n,x)=>n+(S.per[x.id]?.prep.length||0),0);
+    P.innerHTML=`<div class="kit-head"><span class="label">${esc(kits.map(x=>x.name).join(" + "))}</span><h2>Prep plan</h2><p>${multi?`Allow about 1½ hours per kit. Do it in one long session or split it across Saturday and Sunday.`:`Do this when you have about 1½ hours, usually Sunday.`} After that, every dinner is about 10 minutes of putting things together.</p></div>
+      ${kits.map(x=>{const pr=S.per[x.id]?.prep||[];return `${multi?`<h3 class="prep-kit">${esc(x.name)}</h3>`:""}<span class="label">${pr.length} of ${x.prep.length} done</span>
+      <div class="list">${x.prep.map((t,i)=>`<label class="check"><input type="checkbox" id="pr-${x.id}-${i}" data-prep="${i}" data-pkit="${x.id}" ${pr.includes(i)?"checked":""}><span>${esc(t)}${hintsFor(t)}</span></label>`).join("")}</div>`}).join("")}
       <p class="note">Store each part in its own container. Keep sauces and greens separate until you eat, so nothing goes soggy.</p>
-      <div class="cta"><p>${done===k.prep.length?"All prepped. Enjoy the week!":"Ready for a new week?"}</p><button class="btn" id="resetKit">Start this kit fresh</button></div>
+      <div class="cta"><p>${done===total?"All prepped. Enjoy the week!":"Ready for a new week?"}</p><button class="btn" id="resetKit">${multi?"Start these kits fresh":"Start this kit fresh"}</button></div>
       <div class="cta"><p>Want something different next week?</p><button class="btn primary" data-go="choose">Choose another kit</button></div>`;
   }
   save();
 }
-function listText(){const k=kit();return k.name+" groceries\n"+needList().map(x=>"- "+x.text).join("\n")}
+function listText(){return plan().map(k=>k.name).join(" + ")+" groceries\n"+needList().map(x=>"- "+x.text).join("\n")}
 function addAvoid(){
   const el=$("avoid"); if(!el)return;
   const words=el.value.split(",").map(w=>w.trim().toLowerCase()).filter(w=>w&&!prefs().avoid.includes(w));
@@ -341,25 +413,29 @@ document.addEventListener("click",async e=>{
   if(t.dataset.unavoid!==undefined){prefs().avoid.splice(+t.dataset.unavoid,1);render();return}
   if(t.id==="addAvoid"){addAvoid();return}
   if(t.id==="toggleAll"){S.showAll=!S.showAll;render();return}
+  if(t.dataset.extra){const id=t.dataset.extra;S.extra=S.extra.includes(id)?S.extra.filter(x=>x!==id):[...S.extra,id].slice(0,MAX_EXTRA);render();return}
   if(t.dataset.kit){
-    if(S.kit!==t.dataset.kit){S.kit=t.dataset.kit;pick=null}
+    const id=t.dataset.kit;
+    // Picking a kit that's already in this week's shop just swaps which one you're viewing
+    if(S.extra.includes(id))S.extra=[S.kit,...S.extra.filter(x=>x!==id)];
+    else if(S.kit!==id)S.extra=[];
+    if(S.kit!==id){S.kit=id;pick=null}
     go("recipes");return}
   if(t.id==="pickOne"){const k=kit();let i;do{i=Math.floor(Math.random()*k.meals.length)}while(k.meals.length>1&&i===pick);pick=i;render();toast("Tonight: "+k.meals[i].n);return}
-  if(t.id==="clearHave"){per().have=[];render();return}
+  if(t.id==="clearHave"){S.have[planKey()]=[];render();return}
   if(t.id==="copy"){
     const txt=listText();
     try{await navigator.clipboard.writeText(txt);toast("Copied "+needList().length+" items")}
     catch(err){showCopy=true;render();const ta=$("copyText");if(ta){ta.focus();ta.select()}toast("Select the text below and copy it")}
     return}
-  if(t.id==="resetKit"){S.per[S.kit]={have:[],prep:[]};render();toast("Fresh start for this kit")}
+  if(t.id==="resetKit"){plan().forEach(x=>S.per[x.id]={have:[],prep:[]});S.have[planKey()]=[];render();toast("Fresh start")}
 });
 document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.id==="avoid"){e.preventDefault();addAvoid()}});
 document.addEventListener("change",e=>{
   const t=e.target; if(t.id==="avoid")return;
-  const p=per();
   const tog=(arr,i)=>arr.includes(i)?arr.filter(x=>x!==i):[...arr,i];
-  if(t.dataset.have!==undefined){p.have=tog(p.have,+t.dataset.have);render()}
-  if(t.dataset.prep!==undefined){p.prep=tog(p.prep,+t.dataset.prep);render()}
+  if(t.dataset.have!==undefined){S.have[planKey()]=tog(haveList(),t.dataset.have);render()}
+  if(t.dataset.prep!==undefined){const p=(S.per[t.dataset.pkit] ||= {have:[],prep:[]});p.prep=tog(p.prep,+t.dataset.prep);render()}
 });
 
 // Where we're running: a website/installed PWA, or a browser extension page (popup or tab)

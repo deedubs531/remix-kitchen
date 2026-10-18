@@ -4,6 +4,8 @@ Weekly meal kits: one shop, one weekend prep, five 10-minute dinners. Tell it yo
 
 Live app: https://deedubs531.github.io/remix-kitchen/
 
+Cooking more than one kit in a week? On the grocery list, add up to two more kits and you get one merged list, with shared ingredients combined. The prep plan covers all of them.
+
 The same code runs three ways. Your picks and checklists are saved in whichever one you use.
 
 ## Standalone app
