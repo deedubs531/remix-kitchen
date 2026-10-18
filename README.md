@@ -22,6 +22,7 @@ Click the toolbar icon to get the app in a popup. **Open in tab ↗** gives you 
 
 - **Chrome / Edge / Brave:** go to `chrome://extensions`, turn on Developer mode, click **Load unpacked** and pick this folder.
 - **Firefox:** go to `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on** and pick `manifest.json`.
+- **Safari (Mac, needs Xcode):** unzip the extension zip, then run `xcrun safari-web-extension-converter <unzipped folder> --app-name "Remix Kitchen" --macos-only`. Xcode opens a project; press Run. In Safari, turn on Settings → Advanced → Show features for web developers, then Develop → **Allow Unsigned Extensions**, and switch Remix Kitchen on in Settings → Extensions. Leave off `--macos-only` to also get an iPhone/iPad target.
 
 To publish to the Chrome Web Store or Firefox Add-ons, run `./scripts/build-extension.sh`. It builds a zip in `dist/`. Bump `version` in `manifest.json` for each release.
 
